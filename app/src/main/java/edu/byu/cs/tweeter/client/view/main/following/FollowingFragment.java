@@ -1,5 +1,7 @@
-package edu.byu.cs.tweeter.client.view.main.following;
+package edu.byu.cs.tweeter.view.main.following;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -21,14 +23,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.byu.cs.tweeter.R;
-import edu.byu.cs.tweeter.model.domain.AuthToken;
-import edu.byu.cs.tweeter.model.domain.User;
-import edu.byu.cs.tweeter.model.net.TweeterRemoteException;
-import edu.byu.cs.tweeter.model.service.request.FollowingRequest;
-import edu.byu.cs.tweeter.model.service.response.FollowingResponse;
 import edu.byu.cs.tweeter.client.presenter.FollowingPresenter;
 import edu.byu.cs.tweeter.client.view.asyncTasks.GetFollowingTask;
 import edu.byu.cs.tweeter.client.view.util.ImageUtils;
+import edu.byu.cs.tweeter.model.domain.AuthToken;
+import edu.byu.cs.tweeter.model.domain.User;
+import edu.byu.cs.tweeter.model.service.request.FollowingRequest;
+import edu.byu.cs.tweeter.model.service.response.FollowingResponse;
+import edu.byu.cs.tweeter.view.main.OtherUserProfileActivity;
 
 /**
  * The fragment that displays on the 'Following' tab.
@@ -101,7 +103,7 @@ public class FollowingFragment extends Fragment implements FollowingPresenter.Vi
         private final ImageView userImage;
         private final TextView userAlias;
         private final TextView userName;
-
+        private final Context context;
         /**
          * Creates an instance and sets an OnClickListener for the user's row.
          *
@@ -109,6 +111,7 @@ public class FollowingFragment extends Fragment implements FollowingPresenter.Vi
          */
         FollowingHolder(@NonNull View itemView, int viewType) {
             super(itemView);
+            context = itemView.getContext();
 
             if(viewType == ITEM_VIEW) {
                 userImage = itemView.findViewById(R.id.userImage);
@@ -119,6 +122,12 @@ public class FollowingFragment extends Fragment implements FollowingPresenter.Vi
                     @Override
                     public void onClick(View view) {
                         Toast.makeText(getContext(), "You selected '" + userName.getText() + "'.", Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(context, OtherUserProfileActivity.class);
+                        intent.putExtra(OtherUserProfileActivity.CURRENT_USER_KEY, user);
+                        intent.putExtra(OtherUserProfileActivity.AUTH_TOKEN_KEY, authToken);
+                        intent.putExtra(OtherUserProfileActivity.OTHER_USER_ALIAS, userAlias.getText().toString());
+                        context.startActivity(intent);
                     }
                 });
             } else {
@@ -147,7 +156,7 @@ public class FollowingFragment extends Fragment implements FollowingPresenter.Vi
 
         private final List<User> users = new ArrayList<>();
 
-        private User lastFollowee;
+        private edu.byu.cs.tweeter.model.domain.User lastFollowee;
 
         private boolean hasMorePages;
         private boolean isLoading = false;
@@ -293,19 +302,6 @@ public class FollowingFragment extends Fragment implements FollowingPresenter.Vi
         @Override
         public void handleException(Exception exception) {
             Log.e(LOG_TAG, exception.getMessage(), exception);
-
-            if(exception instanceof TweeterRemoteException) {
-                TweeterRemoteException remoteException = (TweeterRemoteException) exception;
-                Log.e(LOG_TAG, "Remote Exception Type: " + remoteException.getRemoteExceptionType());
-
-                Log.e(LOG_TAG, "Remote Stack Trace:");
-                if(remoteException.getRemoteStackTrace() != null) {
-                    for(String stackTraceLine : remoteException.getRemoteStackTrace()) {
-                        Log.e(LOG_TAG, "\t\t" + stackTraceLine);
-                    }
-                }
-            }
-
             removeLoadingFooter();
             Toast.makeText(getContext(), exception.getMessage(), Toast.LENGTH_LONG).show();
         }

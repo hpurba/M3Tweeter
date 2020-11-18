@@ -9,9 +9,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import edu.byu.cs.tweeter.R;
+import edu.byu.cs.tweeter.client.view.main.feed.FeedTweetsFragment;
+import edu.byu.cs.tweeter.client.view.main.follower.FollowersFragment;
+import edu.byu.cs.tweeter.client.view.main.story.StoryTweetsFragment;
 import edu.byu.cs.tweeter.model.domain.AuthToken;
 import edu.byu.cs.tweeter.model.domain.User;
-import edu.byu.cs.tweeter.client.view.main.following.FollowingFragment;
+import edu.byu.cs.tweeter.view.main.following.FollowingFragment;
+
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to one of the sections/tabs/pages
@@ -34,14 +38,31 @@ class SectionsPagerAdapter extends FragmentPagerAdapter {
         this.authToken = authToken;
     }
 
+//    @Override
+//    public Fragment getItem(int position) {
+//        if (position == FOLLOWING_FRAGMENT_POSITION) {
+//            return FollowingFragment.newInstance(user, authToken);
+//        } else {
+//            return PlaceholderFragment.newInstance(position + 1);
+//        }
+//    }
+
     @Override
     public Fragment getItem(int position) {
-        if (position == FOLLOWING_FRAGMENT_POSITION) {
-            return FollowingFragment.newInstance(user, authToken);
-        } else {
-            return PlaceholderFragment.newInstance(position + 1);
+        switch (position) {
+            case 0:
+                return new FeedTweetsFragment().newInstance(user, authToken); // FEED
+            case 1:
+                return new StoryTweetsFragment().newInstance(user, authToken); // STORY
+            case 2:
+                return FollowingFragment.newInstance(user, authToken);
+            case 3:
+                return FollowersFragment.newInstance(user,authToken);
+            default:
+                return null;
         }
     }
+
 
     @Nullable
     @Override

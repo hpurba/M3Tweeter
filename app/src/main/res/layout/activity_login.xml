@@ -1,23 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".client.view.LoginActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.main.LoginRegister.LoginActivity"
+    android:orientation="vertical">
 
-    <TextView
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:background="#1DA1F2"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tweeter_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/tweeter"
+            android:textColor="#FFFFFF"
+            android:textSize="50sp" />
+
+
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="An almost completely unimplemented login activity. Replace this with your own and update the code in LoginService."
-        android:layout_centerHorizontal="true"
-        android:layout_margin="16dp"
-        android:layout_above="@id/LoginButton"/>
+        android:background="?attr/colorPrimary" />
 
-    <Button
-        android:id="@+id/LoginButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Push this Button to Login with a Hard-Coded User"
-        android:layout_centerInParent="true"/>
-</RelativeLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/login_register_view_pager"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
+
+
+
+
+
+<!--CODE TO USE LATER PERHAPS-->
+
+
+
+    <!--    <RadioGroup-->
+    <!--        android:id="@+id/rdogrp"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_margin="0dp"-->
+    <!--        android:gravity="center"-->
+    <!--        android:background="#1DA1F2"-->
+    <!--        android:orientation="horizontal" >-->
+
+    <!--        <RadioButton-->
+    <!--            android:id="@+id/loginbtn"-->
+    <!--            android:text="@string/login"-->
+    <!--            android:textColor="#FFFFFF"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_margin="0dp"-->
+    <!--            android:button="@null"-->
+    <!--            android:checked="true"-->
+    <!--            android:gravity="center"-->
+    <!--            android:layout_weight="1"/>-->
+
+    <!--        <RadioButton-->
+    <!--            android:id="@+id/registerbtn"-->
+    <!--            android:textColor="#FFFFFF"-->
+    <!--            android:text="@string/register"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_margin="0dp"-->
+    <!--            android:button="@null"-->
+    <!--            android:gravity="center"-->
+    <!--            android:layout_weight="1"/>-->
+    <!--    </RadioGroup>-->
+
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/et_email"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:hint="@string/username"-->
+    <!--        android:layout_marginTop="50dp"-->
+    <!--        android:layout_marginLeft="20dp"-->
+    <!--        android:layout_marginRight="20dp"-->
+    <!--        android:padding="15dp"-->
+    <!--        android:inputType="textEmailAddress"-->
+    <!--        android:textSize="15sp"-->
+    <!--        android:autofillHints="@string/username" />-->
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/et_password"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:hint="@string/password"-->
+    <!--        android:layout_marginLeft="20dp"-->
+    <!--        android:layout_marginRight="20dp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:padding="15dp"-->
+    <!--        android:inputType="textPassword"-->
+    <!--        android:textSize="15sp"-->
+    <!--        android:autofillHints="@string/password"/>-->
+
+
+    <!--    <Button-->
+    <!--        android:id="@+id/LoginButton"-->
+    <!--        android:layout_marginTop="50dp"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="@string/login"-->
+    <!--        android:layout_gravity="center"/>-->
