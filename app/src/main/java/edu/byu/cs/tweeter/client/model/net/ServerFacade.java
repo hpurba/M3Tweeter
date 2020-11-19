@@ -60,6 +60,7 @@ public class ServerFacade {
         } else {
             throw new RuntimeException(response.getMessage());
         }
+
     }
 
     /**
@@ -183,30 +184,30 @@ public class ServerFacade {
      * @param request contains all information needed to perform a login.
      * @return the login response.
      */
-    public LoginResponse login(LoginRequest request) {
-        request.getUsername();
-        request.getPassword();
-
-//         Used in place of assert statements because Android does not support them
-//        if(BuildConfig.DEBUG) {
-//            if(request.getUsername() == null || request.getPassword() == null) {
-//                throw new AssertionError();
-//            }
-//        }
-
-//        if (request.getUsername() == null || request.getPassword() == null) {
-//            return new LoginResponse((User) null, (AuthToken) null);
-//        }
-//        else {
-//            User user = new User("Test", "User",
-//                    "https://faculty.cs.byu.edu/~jwilkerson/cs340/tweeter/images/donald_duck.png");
-//            return new LoginResponse(user, new AuthToken());
-//        }
-
-        User user = new User("Test", "User",
-                "https://faculty.cs.byu.edu/~jwilkerson/cs340/tweeter/images/donald_duck.png");
-        return new LoginResponse(user, new AuthToken());
-    }
+//    public LoginResponse login(LoginRequest request) {
+//        request.getUsername();
+//        request.getPassword();
+//
+////         Used in place of assert statements because Android does not support them
+////        if(BuildConfig.DEBUG) {
+////            if(request.getUsername() == null || request.getPassword() == null) {
+////                throw new AssertionError();
+////            }
+////        }
+//
+////        if (request.getUsername() == null || request.getPassword() == null) {
+////            return new LoginResponse((User) null, (AuthToken) null);
+////        }
+////        else {
+////            User user = new User("Test", "User",
+////                    "https://faculty.cs.byu.edu/~jwilkerson/cs340/tweeter/images/donald_duck.png");
+////            return new LoginResponse(user, new AuthToken());
+////        }
+//
+//        User user = new User("Test", "User",
+//                "https://faculty.cs.byu.edu/~jwilkerson/cs340/tweeter/images/donald_duck.png");
+//        return new LoginResponse(user, new AuthToken());
+//    }
 
 
 

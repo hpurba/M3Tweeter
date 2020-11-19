@@ -5,6 +5,7 @@ import java.io.IOException;
 import edu.byu.cs.tweeter.client.model.net.ServerFacade;
 import edu.byu.cs.tweeter.client.util.ByteArrayUtils;
 import edu.byu.cs.tweeter.model.domain.User;
+import edu.byu.cs.tweeter.model.net.TweeterRemoteException;
 import edu.byu.cs.tweeter.model.service.request.LoginRequest;
 import edu.byu.cs.tweeter.model.service.response.LoginResponse;
 
@@ -13,9 +14,9 @@ import edu.byu.cs.tweeter.model.service.response.LoginResponse;
  */
 public class LoginService {
 
-    public LoginResponse login(LoginRequest request) throws IOException {
+    public LoginResponse login(LoginRequest request) throws IOException, TweeterRemoteException {
         ServerFacade serverFacade = getServerFacade();
-        LoginResponse loginResponse = serverFacade.login(request);
+        LoginResponse loginResponse = serverFacade.login(request, "asdf");
 
         if(loginResponse.isSuccess()) {
             loadImage(loginResponse.getUser());
