@@ -9,14 +9,12 @@ import edu.byu.cs.tweeter.model.service.response.FeedTweetsResponse;
 
 public class FeedTweetsService {
 
-
     public FeedTweetsResponse getFeedTweets(FeedTweetsRequest request) throws IOException {
         FeedTweetsResponse response = getServerFacade().getFeedTweets(request);
 
         if(response.isSuccess()) {
             //
         }
-
         return response;
     }
 
@@ -31,6 +29,4 @@ public class FeedTweetsService {
     ServerFacade getServerFacade() {
         return new ServerFacade();
     }
-
-
 }

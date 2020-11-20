@@ -60,7 +60,6 @@ public class ServerFacade {
         } else {
             throw new RuntimeException(response.getMessage());
         }
-
     }
 
     /**
@@ -175,42 +174,6 @@ public class ServerFacade {
     private final Tweet tweet_S15 = new Tweet("@TestUser", "Do not go where the path may lead, go instead where there is no path and leave a trail.");
     private final Tweet tweet_S16 = new Tweet("@TestUser", "In the end, it's not the years in your life that count. It's the life in your years.");
 
-
-    /**
-     * Performs a login and if successful, returns the logged in user and an auth token. The current
-     * implementation is hard-coded to return a dummy user and doesn't actually make a network
-     * request.
-     *
-     * @param request contains all information needed to perform a login.
-     * @return the login response.
-     */
-//    public LoginResponse login(LoginRequest request) {
-//        request.getUsername();
-//        request.getPassword();
-//
-////         Used in place of assert statements because Android does not support them
-////        if(BuildConfig.DEBUG) {
-////            if(request.getUsername() == null || request.getPassword() == null) {
-////                throw new AssertionError();
-////            }
-////        }
-//
-////        if (request.getUsername() == null || request.getPassword() == null) {
-////            return new LoginResponse((User) null, (AuthToken) null);
-////        }
-////        else {
-////            User user = new User("Test", "User",
-////                    "https://faculty.cs.byu.edu/~jwilkerson/cs340/tweeter/images/donald_duck.png");
-////            return new LoginResponse(user, new AuthToken());
-////        }
-//
-//        User user = new User("Test", "User",
-//                "https://faculty.cs.byu.edu/~jwilkerson/cs340/tweeter/images/donald_duck.png");
-//        return new LoginResponse(user, new AuthToken());
-//    }
-
-
-
     /**
      * Performs a logout and if successful
      *
@@ -219,30 +182,20 @@ public class ServerFacade {
      */
     public LogoutResponse logout(LogoutRequest request) {
         LogoutResponse logoutResponse;
-
         // Used in place of assert statements because Android does not support them
         if(BuildConfig.DEBUG) {
             if(request.getUsername() == null) {
                 throw new AssertionError();
             }
         }
-
-
         if (request.getUsername() != null) {
             logoutResponse = new LogoutResponse(true);
         }
         else {
             logoutResponse = new LogoutResponse(false);
         }
-
-        // erase the created user...
-
         return new LogoutResponse();
     }
-
-
-
-
 
 
     /**
@@ -637,7 +590,7 @@ public class ServerFacade {
 
 //        User user = new User("Test", "User",
 //                "https://faculty.cs.byu.edu/~jwilkerson/cs340/tweeter/images/donald_duck.png");
-        return new RegisterResponse(user, new AuthToken());
+        return new RegisterResponse(user, null);
     }
 
 

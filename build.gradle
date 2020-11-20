@@ -13,22 +13,6 @@ buildscript {
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
-
-//    task deleteJar(type: Delete) {
-//        delete 'libs/jars/tweeterJarFiles.jar'
-//    }
-//
-//    task createJar1(type: Copy) {
-//        from('server/')
-//        into('libs/jars/')
-//    }
-//
-//    task createJar2(type: Copy) {
-//        from('shared/')
-//        into('libs/jars/')
-//    }
-//
-//    createJar.dependsOn(deleteJar, build)
 }
 
 allprojects {
