@@ -37,7 +37,6 @@ public class LoginTask extends AsyncTask<LoginRequest, Void, LoginResponse> {
         if(observer == null) {
             throw new NullPointerException();
         }
-
         this.presenter = presenter;
         this.observer = observer;
     }
@@ -52,7 +51,6 @@ public class LoginTask extends AsyncTask<LoginRequest, Void, LoginResponse> {
     @Override
     protected LoginResponse doInBackground(LoginRequest... loginRequests) {
         LoginResponse loginResponse = null;
-
         try {
             loginResponse = presenter.login(loginRequests[0]);
 
@@ -62,7 +60,6 @@ public class LoginTask extends AsyncTask<LoginRequest, Void, LoginResponse> {
         } catch (Exception ex) {
             exception = ex;
         }
-
         return loginResponse;
     }
 
