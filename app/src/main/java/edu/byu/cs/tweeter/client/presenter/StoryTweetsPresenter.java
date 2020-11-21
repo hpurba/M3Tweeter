@@ -8,7 +8,6 @@ import edu.byu.cs.tweeter.model.service.response.StoryTweetsResponse;
 
 public class StoryTweetsPresenter {
 
-
     private final View view;
 
     /**
@@ -41,7 +40,7 @@ public class StoryTweetsPresenter {
     }
 
     /**
-     * Returns an instance of {@link FollowerService}. Allows mocking of the FollowerService class
+     * Returns an instance of {@link }. Allows mocking of the FollowerService class
      * for testing purposes. All usages of FollowerService should get their FollowerService
      * instance from this method to allow for mocking of the instance.
      *

@@ -49,5 +49,4 @@ public class FeedTweetsPresenter {
     FeedTweetsService getFeedTweetsService() {
         return new FeedTweetsService();
     }
-
 }

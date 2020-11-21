@@ -8,8 +8,6 @@ import edu.byu.cs.tweeter.model.service.response.LogoutResponse;
 
 public class LogoutPresenter {
 
-
-
     private final View view;
 
     /**

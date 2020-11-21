@@ -133,8 +133,6 @@ public class ServerFacade {
     private final User user19 = new User("Justin", "Jones", MALE_IMAGE_URL);
     private final User user20 = new User("Jill", "Johnson", FEMALE_IMAGE_URL);
 
-
-
     private final Tweet tweet1 = new Tweet("@AllenAnderson", "I am Allen! Nice to meet you all!");
     private final Tweet tweet2 = new Tweet("@AmyAmes", "Yooo I'm Amy.");
     private final Tweet tweet3 = new Tweet("@BobBobson", "Welcome to Bob paradise");
@@ -155,7 +153,6 @@ public class ServerFacade {
     private final Tweet tweet18 = new Tweet("@IsabelIsaacson", "I like to eat pizza");
     private final Tweet tweet19 = new Tweet("@JustinJones", "world peace is not possible");
     private final Tweet tweet20 = new Tweet("@JillJohnson", "I am an olympian");
-
 
     private final Tweet tweet_S1 = new Tweet("@TestUser", "The greatest glory in living lies not in never falling, but in rising every time we fall.");
     private final Tweet tweet_S2 = new Tweet("@TestUser", "The way to get started is to quit talking and begin doing.");

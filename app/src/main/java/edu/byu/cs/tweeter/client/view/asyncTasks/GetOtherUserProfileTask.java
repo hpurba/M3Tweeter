@@ -10,7 +10,6 @@ import edu.byu.cs.tweeter.model.service.response.FollowingStatusResponse;
 
 public class GetOtherUserProfileTask extends AsyncTask<FollowingStatusRequest, Void, FollowingStatusResponse> {
 
-
     private final OtherUserProfilePresenter presenter;
     private final Observer observer;
     private Exception exception;

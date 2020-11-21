@@ -9,6 +9,7 @@ import edu.byu.cs.tweeter.model.service.request.StoryTweetsRequest;
 import edu.byu.cs.tweeter.model.service.response.StoryTweetsResponse;
 
 public class GetStoryTweetsTask extends AsyncTask<StoryTweetsRequest, Void, StoryTweetsResponse> {
+
     private final StoryTweetsPresenter presenter;
     private final Observer observer;
     private Exception exception;
@@ -71,6 +72,4 @@ public class GetStoryTweetsTask extends AsyncTask<StoryTweetsRequest, Void, Stor
             observer.storyTweetsRetrieved(storyTweetsResponse);
         }
     }
-
-
 }

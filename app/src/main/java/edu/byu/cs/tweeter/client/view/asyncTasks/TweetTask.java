@@ -38,8 +38,6 @@ public class TweetTask  extends AsyncTask<TweetRequest, Void, TweetResponse> {
         this.observer = observer;
     }
 
-
-
     /**
      * The method that is invoked on a background thread to log the user in. This method is
      * invoked indirectly by calling {@link #execute(TweetRequest...)}.
@@ -64,8 +62,6 @@ public class TweetTask  extends AsyncTask<TweetRequest, Void, TweetResponse> {
         return tweetResponse;
     }
 
-
-
     /**
      * Notifies the observer (on the thread of the invoker of the
      * {@link #execute(TweetRequest...)} method) when the task completes.
@@ -82,6 +78,4 @@ public class TweetTask  extends AsyncTask<TweetRequest, Void, TweetResponse> {
             observer.tweetUnsuccessful(tweetResponse);
         }
     }
-
-
 }

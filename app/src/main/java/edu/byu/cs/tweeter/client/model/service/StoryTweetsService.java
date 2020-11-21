@@ -8,12 +8,10 @@ import edu.byu.cs.tweeter.model.service.response.StoryTweetsResponse;
 
 public class StoryTweetsService {
 
-
     public StoryTweetsResponse getStoryTweets(StoryTweetsRequest request) throws IOException {
         StoryTweetsResponse response = getServerFacade().getStoryTweets(request);
         return response;
     }
-
 
     /**
      * Returns an instance of {@link ServerFacade}. Allows mocking of the ServerFacade class for

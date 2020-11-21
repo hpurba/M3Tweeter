@@ -8,7 +8,6 @@ import edu.byu.cs.tweeter.model.service.response.FollowingStatusResponse;
 
 public class OtherUserProfilePresenter {
 
-
     private final View view;
 
     /**

@@ -8,7 +8,6 @@ import edu.byu.cs.tweeter.model.service.response.TweetResponse;
 
 public class TweetPresenter {
 
-
     private final View view;
 
     /**

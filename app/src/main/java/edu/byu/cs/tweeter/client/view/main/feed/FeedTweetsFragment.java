@@ -34,10 +34,8 @@ public class FeedTweetsFragment extends Fragment implements FeedTweetsPresenter.
     private static final String LOG_TAG = "FeedTweetsFragment";
     private static final String USER_KEY = "UserKey";
     private static final String AUTH_TOKEN_KEY = "AuthTokenKey";
-
     private static final int LOADING_DATA_VIEW = 0;
     private static final int ITEM_VIEW = 1;
-
     private static final int PAGE_SIZE = 11;
 
     private Tweet tweet;
@@ -57,7 +55,6 @@ public class FeedTweetsFragment extends Fragment implements FeedTweetsPresenter.
     public static FeedTweetsFragment newInstance(User user, AuthToken authToken) {
         FeedTweetsFragment fragment = new FeedTweetsFragment();
 
-
         Bundle args = new Bundle(2);
         args.putSerializable(USER_KEY, user);
         args.putSerializable(AUTH_TOKEN_KEY, authToken);
@@ -65,10 +62,6 @@ public class FeedTweetsFragment extends Fragment implements FeedTweetsPresenter.
         fragment.setArguments(args);
         return fragment;
     }
-
-
-
-
 
 
     @Override

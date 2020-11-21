@@ -55,7 +55,6 @@ public class LogoutTask extends AsyncTask<LogoutRequest, Void, LogoutResponse> {
 
             if(logoutResponse.isSuccess()) {
                 // when the logout is successful
-
             }
         } catch (IOException ex) {
             exception = ex;

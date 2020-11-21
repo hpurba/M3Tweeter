@@ -11,7 +11,6 @@ import edu.byu.cs.tweeter.model.service.response.RegisterResponse;
 
 public class RegisterTask extends AsyncTask<RegisterRequest, Void, RegisterResponse> {
 
-
     private final RegisterPresenter presenter;
     private final Observer observer;
     private Exception exception;
@@ -25,7 +24,6 @@ public class RegisterTask extends AsyncTask<RegisterRequest, Void, RegisterRespo
         void registerUnsuccessful(RegisterResponse registerResponse);
         void handleException(Exception ex);
     }
-
 
     /**
      * Creates an instance.
