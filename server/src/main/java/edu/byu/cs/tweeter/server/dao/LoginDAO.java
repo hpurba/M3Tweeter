@@ -18,8 +18,9 @@ public class LoginDAO {
 //                "https://faculty.cs.byu.edu/~jwilkerson/cs340/tweeter/images/donald_duck.png");
 //        user.setAlias("@testUser");
 //        user.setImageBytes(null);
-        user1.setAlias("@hpurba");
 
+//        user1.setAlias("@hpurba");
+        user1.setAlias(request.getUsername());
         LoginResponse loginResponse = new LoginResponse(user1, null);
         return loginResponse;
     }
